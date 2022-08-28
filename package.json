@@ -1,0 +1,22 @@
+{
+  "name": "yjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm bedrock --entry=src/index.ts --dist=build/index.js --dev",
+    "build": "pnpm bedrock --entry=src/index.ts --dist=build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hancomeducation/bedrock": "^1.7.3",
+    "lodash": "^4.17.21",
+    "y-protocols": "^1.0.5",
+    "yjs": "^13.5.41"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13"
+  }
+}
