@@ -29,11 +29,11 @@ export class Encoder {
     }
 
     writeVarUint(num) {
-        while (num > (1 << 6)) {
-            this.write((1 << 7) | ((1 << 6) & num))
+        while (num > 127) {
+            this.write(128 | (127 & num))
             num = Math.floor(num / 128)
         }
-        this.write((1 << 6) & num)
+        this.write(127 & num)
     }
 
     writeUint8Array(uint8Array) {

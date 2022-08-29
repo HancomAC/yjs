@@ -20,8 +20,9 @@ export class Decoder {
         let mult = 1
         while (true) {
             const r = this.arr[this.pos++]
-            num = num + (r & (1 << 6)) * mult
-            if (r < (1 << 7)) {
+            num = num + (r & 127) * mult
+            mult *= 128
+            if (r < 128) {
                 return num
             }
             if (num > Number.MAX_SAFE_INTEGER) {

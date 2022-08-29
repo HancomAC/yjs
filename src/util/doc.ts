@@ -7,8 +7,8 @@ import {
     CALLBACK_URL,
     gcEnabled, isCallbackSet
 } from "../config";
-import awarenessProtocol from 'y-protocols/dist/awareness.cjs';
-import syncProtocol from 'y-protocols/dist/sync.cjs';
+import * as awarenessProtocol from 'y-protocols/dist/awareness.cjs';
+import * as syncProtocol from 'y-protocols/dist/sync.cjs';
 import {callbackHandler} from "./callback";
 import {Encoder} from "./encoder";
 import {messageAwareness, messageSync, wsReadyStateConnecting, wsReadyStateOpen} from "./consts";

@@ -1,8 +1,8 @@
 import {Encoder} from "./encoder";
 import {Decoder} from "./decoder";
 import {messageAwareness, messageSync, wsReadyStateConnecting, wsReadyStateOpen} from "./consts";
-import awarenessProtocol from 'y-protocols/dist/awareness.cjs';
-import syncProtocol from 'y-protocols/dist/sync.cjs';
+import * as awarenessProtocol from 'y-protocols/dist/awareness.cjs';
+import * as syncProtocol from 'y-protocols/dist/sync.cjs';
 
 export function receive(conn, doc, message) {
     try {
