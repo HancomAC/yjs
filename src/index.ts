@@ -16,8 +16,15 @@ App({
             const uid = uuid();
             const doc = docs.doc(uid, true)
             doc.getText('monaco').delete(0, doc.getText('monaco').toString().length)
-            doc.getText('monaco').insert(0, 'ddfasdfasd')
+            doc.getText('monaco').insert(0, body?.text || '')
             return {data: uid}
+        })
+        post('/doc/:name', async ({body, params: {name}}) => {
+            console.log(body)
+            const doc = docs.doc(name, true)
+            doc.getText('monaco').delete(0, doc.getText('monaco').toString().length)
+            doc.getText('monaco').insert(0, body?.text || '')
+            return {data: true}
         })
         ws('/doc/:name', (ws, {params: {name}}) => {
             try {
